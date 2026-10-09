@@ -55,8 +55,7 @@ body.light-theme {
   --bg-card: #f1f5f9;
 
   --text-primary: #0f172a;
-  --text-secondary: #334155;
-  --text-muted: #64748b;
+  --text-secondary: #3341552q --text-muted: #64748b;
 
   --accent: #4f46e5;
   --accent-hover: #4338ca;
@@ -869,17 +868,51 @@ body.light-theme {
 
 /* ==================== 11. RESPONSIVE DESIGN ==================== */
 
+/* ---------- Tablets & Mobile Devices (<= 768px) ---------- */
+/* ==================== 11. RESPONSIVE DESIGN ==================== */
+
+/* ---------- Mobile & Tablet Fixes (<= 768px) ---------- */
 @media (max-width: 768px) {
+  /* Prevent overall horizontal scroll overflow */
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  /* Section Spacing Adjustments */
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-subtitle {
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+
+  /* Navbar & Mobile Slide-Out Drawer */
   .nav-toggle {
-    display: block; /* Shows hamburger icon on mobile */
-    z-index: 1001; /* Keeps icon visible over full menu */
+    display: block;
+    z-index: 1001;
   }
 
   .nav-menu {
+    display: flex; /* Ensures flexbox is active for vertical stacking */
     position: fixed;
     top: 0;
-    right: -100%; /* Hides the menu off-screen to the right */
-    width: 75%;
+    right: -100%;
+    width: 80%;
     max-width: 300px;
     height: 100vh;
     background-color: var(--bg-secondary);
@@ -888,12 +921,149 @@ body.light-theme {
     align-items: center;
     gap: 2rem;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
-    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth slide animation */
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
   }
 
-  /* Active class added by JS to slide the menu into view */
   .nav-menu.active {
     right: 0;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+  }
+
+  /* Hero Section Mobile Fitting */
+  .hero,
+  .hero-banner {
+    min-height: auto;
+    padding-top: 100px;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .hero-cta {
+    margin-top: 1.5rem;
+    display: flex; /* Ensures flex column works properly */
+    flex-direction: row;
+    width: 50%;
+    gap: 0.75rem;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    text-align: center;
+  }
+  .hero-cta .btn2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* About Section */
+  .about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .stat-item {
+    text-align: left;
+  }
+
+  /* Skills & Projects Grids - Single Column Fit */
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Experience Timeline Alignment */
+  .timeline {
+    padding-left: 1.25rem;
+  }
+
+  .timeline-dot {
+    left: calc(-1.25rem - 4px);
+  }
+
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  /* Project Controls */
+  .projects-controls {
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .search-box {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .filter-buttons {
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto; /* Allows horizontal scrolling for filter pills if needed */
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-btn {
+    flex-shrink: 0;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.8rem;
+  }
+
+  /* Contact Section Layout */
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-form {
+    padding: 1.25rem;
+  }
+
+  /* Modal Popup Fit */
+  .modal-container {
+    width: 92%;
+    padding: 1.25rem;
+    max-height: 90vh;
+  }
+
+  .modal-title {
+    font-size: 1.35rem;
+  }
+}
+
+/* ---------- Ultra-Small Screens (<= 480px) ---------- */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .contact-card {
+    flex-direction: row;
+    align-items: center;
   }
 }
