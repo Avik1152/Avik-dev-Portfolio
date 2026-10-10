@@ -68,35 +68,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
   sections.forEach((section) => sectionObserver.observe(section));
 
-  //   // ==================== 4. DARK / LIGHT MODE TOGGLE ====================
-  //   const themeToggle = document.getElementById("theme-toggle");
-  //   const themeIcon = themeToggle ? themeToggle.querySelector("i") : null;
+  // Dynamic Typing Effect Logic
+  const typingText = document.getElementById("typing-text");
+  const roles = [
+    "Frontend Developer",
+    "MERN Stack Developer",
+    "Full-Stack Developer",
+  ];
 
-  //   // Check saved theme in localStorage or default to dark
-  //   const savedTheme = localStorage.getItem("selected-theme");
-  //   if (savedTheme === "light") {
-  //     document.body.classList.add("light-theme");
-  //     if (themeIcon) {
-  //       themeIcon.classList.replace("fa-moon", "fa-sun");
-  //     }
-  //   }
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
 
-  //   if (themeToggle) {
-  //     themeToggle.addEventListener("click", () => {
-  //       document.body.classList.toggle("light-theme");
-  //       const isLight = document.body.classList.contains("light-theme");
+  function typeEffect() {
+    if (!typingText) return;
 
-  //       // Swap icon
-  //       if (themeIcon) {
-  //         if (isLight) {
-  //           themeIcon.classList.replace("fa-moon", "fa-sun");
-  //         } else {
-  //           themeIcon.classList.replace("fa-sun", "fa-moon");
-  //         }
-  //       }
+    const currentRole = roles[roleIndex];
 
-  //       // Save preference to localStorage
-  //       localStorage.setItem("selected-theme", isLight ? "light" : "dark");
-  //     });
-  //   }
+    if (isDeleting) {
+      typingText.textContent = currentRole.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      typingText.textContent = currentRole.substring(0, charIndex + 1);
+      charIndex++;
+    }
+
+    let speed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && charIndex === currentRole.length) {
+      speed = 1800;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+      speed = 400;
+    }
+
+    setTimeout(typeEffect, speed);
+  }
+  typeEffect();
 });

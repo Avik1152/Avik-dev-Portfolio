@@ -328,11 +328,12 @@ body.light-theme {
   margin-bottom: 0.75rem;
 }
 
-/* ==================== TYPING EFFECT CURSOR ==================== */
+/* Dynamic Typing Cursor Effect */
 .typing-cursor {
   display: inline-block;
   color: var(--accent);
   font-weight: 400;
+  margin-left: 2px;
   animation: blink 0.8s infinite;
 }
 
@@ -345,6 +346,31 @@ body.light-theme {
     opacity: 0;
   }
 }
+
+.highlight2 {
+  color: rgb(38, 230, 204);
+  /* font-weight: 600; */
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ==================== TYPING EFFECT CURSOR ==================== */
+/* .typing-cursor {
+  display: inline-block;
+  color: var(--text-primary);
+  font-weight: 400;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+} */
 
 /* ==================== PROJECT CONTROLS & SEARCH ==================== */
 .projects-controls {
