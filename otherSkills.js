@@ -28,3 +28,25 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==================== 2. CONSOLE LOG OR TRACKING ====================
   console.log("Marine & Laboratory Experience page loaded successfully.");
 });
+
+// ==================== 3. MODAL POPUP FUNCTIONS ====================
+function openModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.style.display = "flex";
+  }
+}
+
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Close modal when clicking outside the content box
+window.onclick = function (event) {
+  if (event.target.classList.contains("custom-modal")) {
+    event.target.style.display = "none";
+  }
+};

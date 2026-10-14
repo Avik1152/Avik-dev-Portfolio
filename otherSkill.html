@@ -20,7 +20,7 @@
     <!-- ==================== HEADER & NAVBAR ==================== -->
     <header class="header">
       <nav class="nav-container">
-        <a href="index.html" class="back-btn">
+        <a href="index.html" class="nav-back-btn">
           <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
         </a>
         <div class="nav-brand">Avik Mondal</div>
@@ -45,7 +45,7 @@
     <!-- ==================== MAIN CONTENT CONTAINER ==================== -->
     <main class="content-container">
       <section class="experience-grid">
-        <!-- Marine Engineering Card with Image Support -->
+        <!-- Marine Engineering Card -->
         <div class="experience-card">
           <div class="card-media">
             <img
@@ -70,34 +70,34 @@
 
             <ul class="responsibilities">
               <li>
-                Operated and maintained marine diesel engines and complex
-                propulsion systems.
+                Operated and maintained marine diesel engines and propulsion
+                systems.
               </li>
               <li>
-                Managed Tug Vessel operations, assisting in safe docking and
-                navigation procedures.
-              </li>
-              <li>
-                Assisted in deck operations and adhered to strict maritime
-                safety and security protocols.
-              </li>
-              <li>
-                Monitored engine room parameters and conducted routine
-                mechanical inspections.
+                Managed Tug Vessel operations, assisting in safe docking
+                procedures.
               </li>
             </ul>
 
-            <!-- Tech / Equipment Tags -->
+            <!-- Interactive Clickable Tags for Marine -->
             <div class="tech-tags">
-              <span>Diesel Engines</span>
-              <span>Tug Vessels</span>
-              <span>Deck Operations</span>
-              <span>Safety Protocols</span>
+              <button class="tag-btn" onclick="openModal('dieselModal')">
+                Marine Diesel Engines
+              </button>
+              <button class="tag-btn" onclick="openModal('tugModal')">
+                Tug Maneuvering
+              </button>
+              <button class="tag-btn" onclick="openModal('mooringModal')">
+                Mooring & Towing
+              </button>
+              <button class="tag-btn" onclick="openModal('safetyModal')">
+                SOLAS & ISM Safety
+              </button>
             </div>
           </div>
         </div>
 
-        <!-- Laboratory Analysis Card with Image Support -->
+        <!-- Laboratory Analysis Card -->
         <div class="experience-card">
           <div class="card-media">
             <img
@@ -124,28 +124,28 @@
             <ul class="responsibilities">
               <li>
                 Conducted rigorous mineral analysis for coal, iron ore, and
-                other industrial raw materials.
+                other raw materials.
               </li>
               <li>
-                Performed laboratory testing following strict ASTM and ISO
-                international standards.
-              </li>
-              <li>
-                Analyzed moisture, ash content, and volatile matter using
-                standardized laboratory equipment.
-              </li>
-              <li>
-                Documented test results, ensured data accuracy, and prepared
-                comprehensive QA reports.
+                Performed laboratory testing following strict international
+                standards.
               </li>
             </ul>
 
-            <!-- Tech / Equipment Tags -->
+            <!-- Interactive Clickable Tags for Laboratory -->
             <div class="tech-tags">
-              <span>ASTM Standards</span>
-              <span>ISO Compliance</span>
-              <span>Mineral Analysis</span>
-              <span>Quality Control</span>
+              <button class="tag-btn" onclick="openModal('astmModal')">
+                ASTM Standards (Coal)
+              </button>
+              <button class="tag-btn" onclick="openModal('isoModal')">
+                ISO Compliance
+              </button>
+              <button class="tag-btn" onclick="openModal('mineralModal')">
+                Iron Ore & Limestone
+              </button>
+              <button class="tag-btn" onclick="openModal('qaModal')">
+                Data Reporting & QA
+              </button>
             </div>
           </div>
         </div>
@@ -182,6 +182,120 @@
         </div>
       </section>
     </main>
+
+    <!-- ==================== MODAL POPUPS FOR MARINE ==================== -->
+    <div id="dieselModal" class="custom-modal">
+      <div class="modal-content">
+        <h3>Marine Diesel Engines</h3>
+        <p>
+          Detailed knowledge of two-stroke and four-stroke marine diesel
+          engines, fuel injection systems, cooling water circuits, Lube oil
+          systems, and routine troubleshooting of mechanical failures.
+        </p>
+        <button class="close-modal" onclick="closeModal('dieselModal')">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <div id="tugModal" class="custom-modal">
+      <div class="modal-content">
+        <h3>Tug Maneuvering</h3>
+        <p>
+          Assisted in managing Tug Vessel operations, deck machinery handling,
+          towing gear setup, and coordination during ship maneuvering and harbor
+          docking.
+        </p>
+        <button class="close-modal" onclick="closeModal('tugModal')">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <div id="mooringModal" class="custom-modal">
+      <div class="modal-content">
+        <h3>Mooring & Towing</h3>
+        <p>
+          Participated in mooring/unmooring procedures, anchor handling, secure
+          line handling, and ensuring vessel stability during port arrival and
+          departure.
+        </p>
+        <button class="close-modal" onclick="closeModal('mooringModal')">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <div id="safetyModal" class="custom-modal">
+      <div class="modal-content">
+        <h3>SOLAS & ISM Safety</h3>
+        <p>
+          Strictly adhered to SOLAS and international maritime safety
+          frameworks, emergency drills, fire-fighting gear handling, and ISM
+          code safety compliance.
+        </p>
+        <button class="close-modal" onclick="closeModal('safetyModal')">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- ==================== MODAL POPUPS FOR LABORATORY ==================== -->
+    <div id="astmModal" class="custom-modal">
+      <div class="modal-content">
+        <h3>ASTM Standards (Coal Analysis)</h3>
+        <p>
+          Conducted rigorous testing for Proximate Analysis (Inherent Moisture,
+          Ash Content, Volatile Matter, Fixed Carbon) and Gross Calorific Value
+          (GCV) using bomb calorimeter as per ASTM standards.
+        </p>
+        <button class="close-modal" onclick="closeModal('astmModal')">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <div id="isoModal" class="custom-modal">
+      <div class="modal-content">
+        <h3>ISO Compliance & Sample Prep</h3>
+        <p>
+          Performed multi-stage crushing, dividing, and pulverization of solid
+          mineral samples adhering strictly to ISO guidelines to ensure accurate
+          analytical representation.
+        </p>
+        <button class="close-modal" onclick="closeModal('isoModal')">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <div id="mineralModal" class="custom-modal">
+      <div class="modal-content">
+        <h3>Iron Ore & Limestone Testing</h3>
+        <p>
+          Extended hands-on laboratory testing and grading parameters to other
+          raw minerals including Iron Ore (Fe percentage checks, moisture
+          analysis) and Limestone quality assessment.
+        </p>
+        <button class="close-modal" onclick="closeModal('mineralModal')">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <div id="qaModal" class="custom-modal">
+      <div class="modal-content">
+        <h3>Data Reporting & QA</h3>
+        <p>
+          Meticulously documented analytical findings, calibrated laboratory
+          instruments, maintained high accuracy limits, and prepared
+          comprehensive QA certificates.
+        </p>
+        <button class="close-modal" onclick="closeModal('qaModal')">
+          Close
+        </button>
+      </div>
+    </div>
 
     <!-- ==================== FOOTER ==================== -->
     <footer class="footer">
