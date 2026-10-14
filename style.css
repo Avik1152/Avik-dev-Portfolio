@@ -698,6 +698,26 @@ body.light-theme {
 }
 
 /* ==================== 8. PROJECTS SECTION ==================== */
+.project-image-container {
+  width: 100%;
+  height: 180px; /* Adjust height as needed for your layout */
+  overflow: hidden;
+  background-color: #111; /* Fallback background */
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Optional: Subtle zoom effect on card hover */
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
