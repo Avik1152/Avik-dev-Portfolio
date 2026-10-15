@@ -67,6 +67,13 @@ body {
   color: var(--text-primary);
 }
 
+.nav-logo {
+  font-family: var(--font-code);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+}
 /* Page Hero Section */
 .page-hero {
   background: linear-gradient(135deg, #1e1b4b, #312e81);
