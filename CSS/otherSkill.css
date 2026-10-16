@@ -333,6 +333,83 @@ body {
   color: var(--text-secondary);
 }
 
+/* ==================== MARINE & LAB COMPACT CV BOX ==================== */
+.marine-cv-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #111827 0%, #1e293b 100%);
+  border-left: 4px solid var(--tag-text, #818cf8);
+  border-top: 1px solid var(--border-color, #334155);
+  border-right: 1px solid var(--border-color, #334155);
+  border-bottom: 1px solid var(--border-color, #334155);
+  border-radius: 10px;
+  padding: 1.1rem 1.5rem;
+  max-width: 600px;
+  margin: 2.5rem auto;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.marine-cv-box:hover {
+  transform: translateY(-2px);
+  border-color: var(--tag-text, #818cf8);
+  box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.2);
+}
+
+.marine-cv-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.marine-badge-icon {
+  font-size: 1.25rem;
+  color: #ffffff;
+  background: var(--accent, #6366f1);
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.marine-cv-text h4 {
+  color: var(--text-primary, #f3f4f6);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.1rem;
+}
+
+.marine-cv-text span {
+  color: var(--text-secondary, #9ca3af);
+  font-size: 0.8rem;
+}
+
+.marine-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: rgba(129, 140, 248, 0.15);
+  color: var(--tag-text, #818cf8);
+  border: 1px solid rgba(129, 140, 248, 0.3);
+  padding: 0.5rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.marine-download-btn:hover {
+  background-color: var(--accent, #6366f1);
+  color: #ffffff;
+  border-color: var(--accent, #6366f1);
+}
+
 /* Footer */
 .footer {
   background: var(--bg-card);
@@ -449,5 +526,19 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+  }
+
+  .marine-cv-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 1.5rem 1rem;
+  }
+
+  .marine-download-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.55rem;
   }
 }

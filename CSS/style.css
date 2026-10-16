@@ -860,6 +860,80 @@ body.light-theme {
   border-color: var(--accent);
 }
 
+/* ==================== COMPACT MODERN CV DOWNLOAD CARD ==================== */
+.cv-card-compact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--card-bg, #1e293b);
+  border: 1px solid var(--border-color, #334155);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  max-width: 450px; /* কার্ডটিকে ছোট ও কমপ্যাক্ট রাখার জন্য */
+  margin: 1.5rem auto; /* মাঝখানে রাখার জন্য (প্রয়োজন অনুযায়ী মার্জিন বদলাতে পারেন) */
+  box-shadow: var(--shadow, 0 8px 20px -4px rgba(0, 0, 0, 0.25));
+  transition: all 0.3s ease;
+}
+
+.cv-card-compact:hover {
+  border-color: var(--accent, #6366f1);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -6px rgba(99, 102, 241, 0.25);
+}
+
+.cv-icon {
+  font-size: 1.5rem;
+  color: var(--accent, #6366f1);
+  background: rgba(99, 102, 241, 0.15);
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.cv-info {
+  flex-grow: 1;
+  margin-left: 1rem;
+  text-align: left;
+}
+
+.cv-info h4 {
+  color: var(--text-primary, #f3f4f6);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.cv-info p {
+  color: var(--text-secondary, #9ca3af);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.cv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--accent, #6366f1);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}
+
+.cv-download-btn:hover {
+  background-color: var(--accent-hover, #4f46e5);
+  transform: translateY(-1px);
+}
+
 /* Contact Form */
 .contact-form {
   background-color: var(--bg-primary);
@@ -1080,6 +1154,37 @@ body.light-theme {
   .contact-wrapper {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .cv-card-compact {
+    padding: 0.85rem 1rem;
+    flex-direction: row; /* মোবাইলেও রো ফরম্যাটে ছোট ও কমপ্যাক্ট থাকবে */
+    gap: 0.5rem;
+    margin: 1rem auto;
+    max-width: 100%;
+  }
+
+  .cv-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.25rem;
+  }
+
+  .cv-info {
+    margin-left: 0.75rem;
+  }
+
+  .cv-info h4 {
+    font-size: 0.88rem;
+  }
+
+  .cv-info p {
+    font-size: 0.75rem;
+  }
+
+  .cv-download-btn {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.78rem;
   }
 
   .contact-form {
